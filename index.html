@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica de Consultas Ágil</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <h1>Clínica de Consultas Ágil</h1> <br> 
+    <div>
+        <button onclick="showUserForm()">Cadastrar Paciente</button>
+          <div id="userForm" style="display: none;">
+              <h2>Formulário de Usuário</h2>
+              <form id="userDataForm">
+                  <label for="name">Nome:</label>
+                  <input type="text" id="name" required>
+                  <label for="phone">Telefone:</label>
+                  <input type="text" id="phone" required>
+                  <button type="button" class="confirmation" onclick="saveUser()">Salvar</button>
+              </form>
+          </div>
+          <div id="userList"  style="display: none;">
+              <ul id="userList"></ul>
+          </div>
+        <button onclick="showAppointmentForm()">Agendar Consulta</button>
+          <div id="appointmentForm" style="display: none;">
+            <h2>Formulário de Agendamento</h2>
+            <form id="appointmentDataForm">
+                <label for="userSelect">Selecione o Usuário:</label>
+                <select id="userSelect" required></select>
+                <label for="day">Dia:</label>
+                <input type="date" id="day" required>
+                <label for="time">Horário:</label>
+                <input type="time" id="time" required>
+                <label for="specialty">Especialidade:</label>
+                <select id="specialty" required >
+                  <option value="">--Escolha uma especialidade--</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Neurologia">Neurologia</option>
+                    <option value="Pediatria">Pediatria</option>
+                    <option value="Oftalmologia">Oftalmologia</option>
+                    <option value="Dermatologia">Dermatologia</option>
+                </select>
+                <button type="button" class="confirmation"  onclick="saveAppointment()">Agendar</button>
+            </form>
+          </div>
+        <button onclick="showAppointments()">Cancelar Agendamentos</button>
+          <div id="appointmentList" style="display: none;" >
+            <ul id="appointmentList"></ul>
+          </div>
+        <button onclick="sair()">Sair </button>
+    </div>
+   
+    <script src="script.js"> </script>
+
+</body>
+</html>
